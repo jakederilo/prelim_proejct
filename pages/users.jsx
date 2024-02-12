@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { BsPersonFill } from 'react-icons/bs';
 import { RiTodoLine } from "react-icons/ri";
@@ -20,8 +21,7 @@ const Customers = () => {
   return (
     <div className='bg-gray-100 min-h-screen'>
       <div className='flex justify-between p-4'>
-        <h2>Users</h2>
-        <h2>Welcome Back, Jake</h2>
+        <h2 className="font-bold">Users</h2>
       </div>
       <div className='p-5'>
         <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>

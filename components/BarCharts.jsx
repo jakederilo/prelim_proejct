@@ -20,63 +20,42 @@ ChartJS.register(
 );
 
 const BarChart = () => {
-  const [totalUsers, setTotalUsers] = useState(() => {
-    // Initialize totalUsers from local storage or default to null
-    const storedTotalUsers = localStorage.getItem('totalUsers');
-    return storedTotalUsers ? JSON.parse(storedTotalUsers) : null;
-  });
-  const [totalPosts, setTotalPosts] = useState(() => {
-    const storedTotalPosts = localStorage.getItem('totalPosts');
-    return storedTotalPosts ? JSON.parse(storedTotalPosts) : null;
-  });
-
-  const [totalComments, setTotalComments] = useState(() => {
-  const storedTotalComments = localStorage.getItem('totalComments');
-  return storedTotalComments ? JSON.parse(storedTotalComments) : null;
-});
-
-  const [totalTodos, setTotalTodos] = useState(() => {
-  const storedTotalTodos = localStorage.getItem('totalTodos');
-  return storedTotalTodos ? JSON.parse(storedTotalTodos) : null;
-});
-
+  const [totalUsers, setTotalUsers] = useState(null);
+  const [totalPosts, setTotalPosts] = useState(null);
+  const [totalComments, setTotalComments] = useState(null);
+  const [totalTodos, setTotalTodos] = useState(null);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(users => {
-        // Once the data is fetched, set the total number of users
         setTotalUsers(users.length);
-        // Store totalUsers in local storage
-        localStorage.setItem('totalUsers', JSON.stringify(users.length));
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching users:', error);
       });
   }, []);
-  
+
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(posts => {
         setTotalPosts(posts.length);
-        localStorage.setItem('totalPosts', JSON.stringify(posts.length));
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching posts:', error);
       });
   }, []);
 
-    
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/comments')
       .then(response => response.json())
       .then(comments => {
+        // Once the data is fetched, set the total number of comments
         setTotalComments(comments.length);
-        localStorage.setItem('totalComments', JSON.stringify(comments.length));
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching comments:', error);
       });
   }, []);
 
@@ -85,22 +64,11 @@ const BarChart = () => {
       .then(response => response.json())
       .then(todos => {
         setTotalTodos(todos.length);
-        localStorage.setItem('totalTodos', JSON.stringify(todos.length));
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching todos:', error);
       });
   }, []);
-
-
-
-
-
-
-
-
-
-  
 
   const [chartData, setChartData] = useState({
     datasets: [],
@@ -113,25 +81,41 @@ const BarChart = () => {
       labels: ['Users', 'Posts', 'Comments', 'Todos'],
       datasets: [
         {
-          label: 'TOTAL',
+          label: 'Total',
           data: [totalUsers, totalPosts, totalComments, totalTodos],
-          borderColor: 'rgb(53, 162, 235)',
-          backgroundColor: 'rgba(53, 190, 235, 0.4)',
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+          ],
+          borderWidth: 1,
         },
       ],
     });
     setChartOptions({
+      indexAxis: 'y',
+      elements: {
+        bar: {
+          borderWidth: 2,
+        },
+      },
+      responsive: true,
       plugins: {
         legend: {
           position: 'top',
         },
         title: {
           display: true,
-          text: 'Daily Revenue',
+          text: 'Data Summary',
         },
       },
-      maintainAspectRatio: false,
-      responsive: true,
     });
   }, [totalUsers, totalPosts, totalComments, totalTodos]);
 

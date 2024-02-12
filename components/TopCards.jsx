@@ -85,10 +85,10 @@ const TopCards = () => {
             <a href="/users"><div className='lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
                 <div className='flex flex-col w-full pb-4'>
                     <p className='text-2xl font-bold'>{totalUsers}</p>
-                    <p className='text-gray-600'>User</p>
+                    <p className='text-gray-600 font-bold'>User</p>
                 </div>
-                <p className='bg-green-200 flex justify-center items-center p-2 rounded-lg'>
-                    <span className='text-green-700 text-lg'>+18%</span>
+                <p className='bg-orange-200 flex justify-center items-center p-2 rounded-lg'>
+                    <span className='text-red-700 text-lg'>+100%</span>
                 </p>
             </div></a>
             <a href="/post"><div className='lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
@@ -96,8 +96,8 @@ const TopCards = () => {
                     <p className='text-2xl font-bold'>{totalPosts}</p>
                     <p className='text-gray-600'>Posts</p>
                 </div>
-                <p className='bg-green-200 flex justify-center items-center p-2 rounded-lg'>
-                    <span className='text-green-700 text-lg'>+11%</span>
+                <p className='bg-violet-200 flex justify-center items-center p-2 rounded-lg'>
+                    <span className='text-red-700 text-lg'>+10%</span>
                 </p>
             </div></a>
             <a href="/comments"><div className='bg-white flex justify-between w-full border p-4 rounded-lg'>
@@ -105,8 +105,8 @@ const TopCards = () => {
                     <p className='text-2xl font-bold'>{totalComments}</p>
                     <p className='text-gray-600'>Comments</p>
                 </div>
-                <p className='bg-green-200 flex justify-center items-center p-2 rounded-lg'>
-                    <span className='text-green-700 text-lg'>+17%</span>
+                <p className='bg-pink-200 flex justify-center items-center p-2 rounded-lg'>
+                    <span className='text-red-700 text-lg'>+2%</span>
                 </p>
             </div></a>
             <a href="/todos"><div className='bg-white flex justify-between w-full border p-4 rounded-lg'>
@@ -115,7 +115,7 @@ const TopCards = () => {
                     <p className='text-gray-600'>Todos</p>
                 </div>
                 <p className='bg-green-200 flex justify-center items-center p-2 rounded-lg'>
-                    <span className='text-green-700 text-lg'>+20%</span>
+                    <span className='text-red-700 text-lg'>+5%</span>
                 </p>
             </div></a>
         </div>

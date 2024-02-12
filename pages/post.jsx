@@ -51,8 +51,7 @@ const Post = () => {
   return (
     <div className='bg-gray-100 min-h-screen'>
       <div className='flex justify-between p-4'>
-        <h2>Post</h2>
-        <h2>Welcome Back, Jake</h2>
+        <h1 className="font-bold ">Post</h1>
       </div>
       <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
         <div className='bg-gray-100 min-h-screen flex justify-center'>
