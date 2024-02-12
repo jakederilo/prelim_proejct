@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Link from 'next/link';
 
 
 const TopCards = () => {
@@ -82,7 +82,7 @@ const TopCards = () => {
 
     return (
         <div className='grid lg:grid-cols-5 gap-4 p-4'>
-            <a href="/users"><div className='lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
+            <Link href="/users"><div className='lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
                 <div className='flex flex-col w-full pb-4'>
                     <p className='text-2xl font-bold'>{totalUsers}</p>
                     <p className='text-gray-600 font-bold'>User</p>
@@ -90,8 +90,8 @@ const TopCards = () => {
                 <p className='bg-orange-200 flex justify-center items-center p-2 rounded-lg'>
                     <span className='text-red-700 text-lg'>+100%</span>
                 </p>
-            </div></a>
-            <a href="/post"><div className='lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
+            </div></Link>
+            <Link href="/post"><div className='lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
                 <div className='flex flex-col w-full pb-4'>
                     <p className='text-2xl font-bold'>{totalPosts}</p>
                     <p className='text-gray-600'>Posts</p>
@@ -99,8 +99,8 @@ const TopCards = () => {
                 <p className='bg-violet-200 flex justify-center items-center p-2 rounded-lg'>
                     <span className='text-red-700 text-lg'>+10%</span>
                 </p>
-            </div></a>
-            <a href="/comments"><div className='bg-white flex justify-between w-full border p-4 rounded-lg'>
+            </div></Link>
+            <Link href="/comments"><div className='bg-white flex justify-between w-full border p-4 rounded-lg'>
                 <div className='flex flex-col w-full pb-4'>
                     <p className='text-2xl font-bold'>{totalComments}</p>
                     <p className='text-gray-600'>Comments</p>
@@ -108,8 +108,8 @@ const TopCards = () => {
                 <p className='bg-pink-200 flex justify-center items-center p-2 rounded-lg'>
                     <span className='text-red-700 text-lg'>+2%</span>
                 </p>
-            </div></a>
-            <a href="/todos"><div className='bg-white flex justify-between w-full border p-4 rounded-lg'>
+            </div></Link>
+            <Link href="/todos"><div className='bg-white flex justify-between w-full border p-4 rounded-lg'>
                 <div className='flex flex-col w-full pb-4'>
                     <p className='text-2xl font-bold'>{totalTodos}</p>
                     <p className='text-gray-600'>Todos</p>
@@ -117,7 +117,7 @@ const TopCards = () => {
                 <p className='bg-green-200 flex justify-center items-center p-2 rounded-lg'>
                     <span className='text-red-700 text-lg'>+5%</span>
                 </p>
-            </div></a>
+            </div></Link>
         </div>
     )
 }
