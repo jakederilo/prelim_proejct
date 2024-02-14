@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardHeader, CardBody, Button, Avatar } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, CardFooter, Button, Avatar } from "@nextui-org/react";
 import { Divider } from "@nextui-org/react";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
 import { ScrollShadow } from "@nextui-org/react";
@@ -49,20 +49,20 @@ const Post = () => {
   };
 
   return (
-    <div className='bg-customColor min-h-screen'>
-      <div className='bg-customColor flex justify-between p-4'>
-        <h2 className="font-bold">Post</h2>
+    <div className='bg-customDivColor min-h-screen'>
+      <div className='bg-customDivColor flex justify-between p-4'>
+        <h2 className="font-bold">POST</h2>
       </div>
-      <div className='w-full m-auto p-4 border rounded-lg bg-customColor overflow-y-auto'>
-        <div className='bg-customColor min-h-screen flex justify-center'>
+     
+        <div className='bg-customDivColor min-h-screen flex justify-center'>
 
           <div className='p-4'>
-            <div className='w-full m-auto p-4 border rounded-lg bg-customColor overflow-y-auto'>
+            <div className='bg-customColor  w-full m-auto p-4 border rounded-lg  overflow-y-auto'>
               {posts.map((post, index) => {
                 const user = users.find(user => user.id === post.userId);
                 const postComments = comments.filter(comment => comment.postId === post.id);
                 return (
-                  <Card key={index} className="max-w-[560px]  mb-1">
+                  <Card key={index} className="max-w-[450px] h-[250px]  mb-1">
                     <CardHeader className="justify-between">
                       <div className="flex gap-5 items-center">
                         <Avatar isBordered radius="33" size="sm" src="/avatar.png" style={{ width: '50px', height: '50px' }} />
@@ -83,18 +83,29 @@ const Post = () => {
                         {isFollowed ? "Unfollow" : "Follow"}
                       </Button>
                     </CardHeader>
-                    <CardBody className="px-3 py-0 text-small text-default-400">
+                    <CardBody className="px-5 py-0 text-small text-default-400">
                       <p>{post.body}</p>
-                      <Divider className="my-3" />
+                    
+                          <CardFooter className="gap-3">
+                      <div className="flex gap-1">
+                        <p className="font-semibold text-default-400 text-small">4.8k</p>
+                        <p className="text-default-400 text-small">Following</p>
+                      </div>
+                      <div className="flex gap-1">
+                        <p className="font-semibold text-default-400 text-small">9K</p>
+                        <p className="text-default-400 text-small">Followers</p>
+                      </div>
                       <Dropdown open={selectedPostId === post.id} onToggle={() => toggleComments(post.id)}>
                         <DropdownTrigger>
                           <Button variant="bordered" color="info">Comments</Button>
                         </DropdownTrigger>
-                        <div>
-
+                      <div>
+                      <Divider className="my-3" />
+                     
+                       
                           <DropdownMenu>
                             <DropdownItem>
-                              <ScrollShadow hideScrollBar={{ backgroundColor: '#AAD7D9'}} className="w-[500px] h-[200px]" style={{textcolor: '#00000',backgroundColor: '#80BCBD' }}>
+                              <ScrollShadow hideScrollBar={{ backgroundColor: '#AAD7D9'}} className="w-[330px] h-[200px]" style={{textcolor: '#00000',backgroundColor: '#92C7CF' }}>
                                 <ul style={{ listStyleType: 'none', padding: '0' }}>
                                   {postComments.map((comment, commentIndex) => (
 
@@ -109,8 +120,12 @@ const Post = () => {
                           </DropdownMenu>
                         </div>
                       </Dropdown>
+                    </CardFooter>
+                      
+                      
                       
                     </CardBody>
+                    <Divider className="my-3" />
                   </Card>
                   
                 );
@@ -119,7 +134,7 @@ const Post = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 

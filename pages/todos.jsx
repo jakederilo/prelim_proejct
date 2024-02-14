@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardBody, CardFooter, Avatar, Button } from "@nextui-org/react";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from "@nextui-org/react";
-import Link from 'next/link';
+import { Divider } from "@nextui-org/react";
 
 const Todos = ({children}) => {
   const [isFollowed, setIsFollowed] = useState(false);
@@ -40,24 +33,24 @@ const Todos = ({children}) => {
   }, []);
 
   if (error) {
-    return <div>Error: {error.message}</div>; // Render error message if there's an error
+    return <div>Error: {error.message}</div>;
   }
 
   return (
-    <div className='bg-gray-400 min-h-screen'>
-      <div className='flex justify-between p-4'>
-        <h2 className="font-bold">Todos</h2>
+    <div className='bg-customDivColor min-h-screen'>
+      <div className='bg-customDivColor flex justify-between p-4'>
+        <h2 className="font-bold">TODOS</h2>
       </div>
-      <div className='w-full m-auto p-4 border rounded-lg bg-black-400 overflow-y-auto'>
-        <div className='bg-gray-400 min-h-screen flex justify-center'>
+     
+        <div className='bg-customDivColor min-h-screen flex justify-center'>
 
           <div className='p-4'>
-            <div className='w-full m-auto p-4 border rounded-lg bg-gray-400 overflow-y-auto'>
+            <div className='bg-customColor  w-full m-auto p-4 border rounded-lg  overflow-y-auto'>
               {users.map((user, index) => {
-                // Filter todos for the current user
+             
                 const userTodos = todos.filter(todo => todo.userId === user.id);
                 return (
-                  <Card key={user.id} className="max-w-[340px] mb-4"> {/* Use a unique identifier as key */}
+                  <Card key={user.id} className="max-w-[450px] h-[250px] mb-4">
                     <CardHeader className="justify-between">
                       <div className="flex gap-5 items-center">
                         <Avatar isBordered radius="33" size="sm" src="/avatar.png" style={{ width: '50px', height: '50px' }} />
@@ -78,31 +71,36 @@ const Todos = ({children}) => {
                       </Button>
                     </CardHeader>
                     <CardBody className="px-3 py-0 text-small text-default-400">
+                      
                       <ul>
-                        {/* Render todos for the current user */}
+     
                         {userTodos.map(todo => (
                           <li key={todo.id}>{todo.title}</li>
                         ))}
                       </ul>
                     </CardBody>
+              
+              
                     <CardFooter className="gap-3">
                       <div className="flex gap-1">
-                        <p className="font-semibold text-default-400 text-small">4</p>
+                        <p className="font-semibold text-default-400 text-small">7k</p>
                         <p className="text-default-400 text-small">Following</p>
                       </div>
                       <div className="flex gap-1">
-                        <p className="font-semibold text-default-400 text-small">97.1K</p>
+                        <p className="font-semibold text-default-400 text-small">7.1K</p>
                         <p className="text-default-400 text-small">Followers</p>
                       </div>
                     </CardFooter>
+                    <Divider className="my-3" />
                   </Card>
+                  
                 );
               })}
             </div>
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 

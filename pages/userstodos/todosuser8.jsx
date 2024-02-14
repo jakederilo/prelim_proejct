@@ -44,14 +44,15 @@ const Todos = () => {
   }
 
   return (
-    <div className='bg-gray-100 min-h-screen'>
-      <div className='flex justify-between p-4'>
-        <h2 className="font-bold">Todos</h2>
-
+    <div className='bg-customDivColor min-h-screen'>
+      <div className='bg-customDivColor flex justify-between p-4'>
+        <h2 className="font-bold">TODOS</h2>
       </div>
-      <div className='bg-gray-100 min-h-screen flex justify-center'>
+
+      <div className='bg-customDivColor min-h-screen flex justify-center'>
+
         <div className='p-4'>
-          <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
+          <div className='bg-customColor  w-full m-auto p-4 border rounded-lg  overflow-y-auto'>
             {user && (
               <Card key={user.id} className="max-w-[340px] mb-4"> {/* Use a unique identifier as key */}
                 <CardHeader className="justify-between">

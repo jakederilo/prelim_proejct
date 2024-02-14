@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BsPersonFill } from 'react-icons/bs';
 import { RiTodoLine } from "react-icons/ri";
 import Link from 'next/link';
+import { Divider } from "@nextui-org/react";
 
 const Customers = () => {
   const [users, setUsers] = useState([]);
@@ -19,13 +20,13 @@ const Customers = () => {
   }, []);
 
   return (
-    <div className='bg-customColor min-h-screen'>
-      <div className='bg-customColor flex justify-between p-4'>
+    <div className='bg-customDivColor min-h-screen'>
+      <div className='bg-customDivColor flex justify-between p-4'>
         <h2 className="text-customTextColor font-bold">Users</h2>
       </div>
       <div className='p-5'>
-        <div className='bg-white w-full m-auto p-4 border rounded-lg overflow-y-auto'>
-          <div className='bg-white first-line:text-customTextColor Colormy-3 p-2 grid md:grid-cols-5 sm:grid-cols-4 grid-cols-3 items-center justify-between cursor-pointer'>
+        <div className='bg-customColor w-full m-auto p-4 border rounded-lg overflow-y-auto'>
+          <div className='bg-customDivColor first-line:text-customTextColor Colormy-3 p-2 grid md:grid-cols-5 sm:grid-cols-4 grid-cols-3 items-center justify-between cursor-pointer'>
             <span text-customTextColor>Name</span>
             <span className='sm:text-left text-right'>Email</span>
             <span className='hidden md:grid'>Address</span>

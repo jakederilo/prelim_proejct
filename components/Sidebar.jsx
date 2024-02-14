@@ -15,7 +15,7 @@ const Sidebar = ({ children }) => {
         <div className='flex flex-col items-center'>
   
           <Link href='/'>
-            <div className='bg-orange-500 text-white p-3 rounded-lg inline-block'>
+            <div className='bg-orange-200 text-white p-3 rounded-lg inline-block'>
               <FaSquareInstagram size={20} />
             </div>
           </Link>
@@ -23,12 +23,14 @@ const Sidebar = ({ children }) => {
           <span className='border-b-[1px] border-gray-200 w-full p-2'></span>
          
           <Link href='/'>
+          <div className="flex flex-wrap gap-4">
           <Tooltip text="Bold" placement ="top" content="Dashboard" color="success">
             <div className='bg-gray-100 color="secondary"  hover:bg-red-200 cursor-pointer my-4 p-3 rounded-lg inline-block'>
               <RxDashboard size={20} />
               
             </div>
             </Tooltip>
+            </div>
           </Link>
           
           <Link href='/users'>
@@ -46,7 +48,7 @@ const Sidebar = ({ children }) => {
             </Tooltip>
           </Link>
           <Link href='/comments'>
-          <Tooltip text="Bold" placement ="top" content="Comments" color="success">
+          <Tooltip  placement ="top"  content="Comments" color="white">
             <div className='bg-gray-100 hover:bg-red-200 cursor-pointer my-4 p-3 rounded-lg inline-block'>
               <LiaCommentSolid size={20} />
             </div>

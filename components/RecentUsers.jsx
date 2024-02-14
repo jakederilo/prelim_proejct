@@ -20,7 +20,7 @@ useEffect(() => {
 
 
   return (
-    <div className='w-full col-span-1 relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-white overflow-scroll'>
+    <div className='w-full col-span-1 relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-blue-100 overflow-scroll'>
       <h1  className="font-bold">Recent Users</h1>
       <ul>
         {users.map((user, id) => (

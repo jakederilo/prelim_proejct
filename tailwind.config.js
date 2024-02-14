@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         customBgColor: '#E5E1DA',
         customTextColor: '#00000',
-        customDivColor: '#AAD7D9',
+        customDivColor: '#92C7CF',
         customColor: '#AAD7D9',
       },
     },

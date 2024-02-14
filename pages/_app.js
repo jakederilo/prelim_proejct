@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Chart } from 'chart.js';
-import 'chartjs-adapter-date-fns'; // Import the chartjs-adapter-date-fns package
+import 'chartjs-adapter-date-fns'; 
 import '../styles/globals.css';
 import Sidebar from '../components/Sidebar';
 
