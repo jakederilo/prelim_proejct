@@ -38,21 +38,21 @@ const Post = () => {
 
 
   return (
-    <div className='bg-gray-100 min-h-screen'>
+    <div className='bg-gray-400 min-h-screen'>
       <div className='flex justify-between p-4'>
         <h2 className="font-bold">Comments</h2>
       </div>
       <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
-        <div className='bg-gray-100 min-h-screen flex justify-center'> {/* Centering the container horizontally */}
+        <div className='bg-gray-100 min-h-screen flex justify-center'> 
 
           <div className='p-4'>
             <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
               {posts.map((post, index) => {
                 const comment = comments.find(comment => comment.postId === post.userId);
                 return (
-                  <Card key={index} className="max-w-[340px] mb-4"> {/* Added margin bottom for spacing between cards */}
+                  <Card key={index} className="max-w-[560px] mb-4"> {/* Added margin bottom for spacing between cards */}
                     <CardHeader className="justify-between">
-                      <div className="flex gap-5 items-center"> {/* Updated to include the profile picture */}
+                      <div className="flex gap-5 items-center"> 
                         <Avatar isBordered radius="33" size="sm" src="/avatar.png" style={{ width: '50px', height: '50px' }} />
                         <div className="flex flex-col gap-1 items-start justify-center">
                           <h4 className="text-small font-semibold leading-none text-default-600">{comment ? comment.name : "Unknown Email"}</h4>

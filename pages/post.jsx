@@ -49,20 +49,20 @@ const Post = () => {
   };
 
   return (
-    <div className='bg-gray-100 min-h-screen'>
-      <div className='flex justify-between p-4'>
-        <h1 className="font-bold ">Post</h1>
+    <div className='bg-customColor min-h-screen'>
+      <div className='bg-customColor flex justify-between p-4'>
+        <h2 className="font-bold">Post</h2>
       </div>
-      <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
-        <div className='bg-gray-100 min-h-screen flex justify-center'>
+      <div className='w-full m-auto p-4 border rounded-lg bg-customColor overflow-y-auto'>
+        <div className='bg-customColor min-h-screen flex justify-center'>
 
           <div className='p-4'>
-            <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
+            <div className='w-full m-auto p-4 border rounded-lg bg-customColor overflow-y-auto'>
               {posts.map((post, index) => {
                 const user = users.find(user => user.id === post.userId);
                 const postComments = comments.filter(comment => comment.postId === post.id);
                 return (
-                  <Card key={index} className="max-w-[340px] mb-4">
+                  <Card key={index} className="max-w-[560px]  mb-1">
                     <CardHeader className="justify-between">
                       <div className="flex gap-5 items-center">
                         <Avatar isBordered radius="33" size="sm" src="/avatar.png" style={{ width: '50px', height: '50px' }} />
@@ -71,6 +71,7 @@ const Post = () => {
                           <h5 className="text-small tracking-tight text-default-400">{user ? user.email : "Unknown Email"}</h5>
                         </div>
                       </div>
+                     
                       <Button
                         className={isFollowed ? "bg-transparent text-foreground border-default-200" : ""}
                         color="primary"
@@ -90,9 +91,10 @@ const Post = () => {
                           <Button variant="bordered" color="info">Comments</Button>
                         </DropdownTrigger>
                         <div>
+
                           <DropdownMenu>
                             <DropdownItem>
-                              <ScrollShadow hideScrollBar className="w-[300px] h-[200px]" style={{ backgroundColor: '#f0f0f0' }}>
+                              <ScrollShadow hideScrollBar={{ backgroundColor: '#AAD7D9'}} className="w-[500px] h-[200px]" style={{textcolor: '#00000',backgroundColor: '#80BCBD' }}>
                                 <ul style={{ listStyleType: 'none', padding: '0' }}>
                                   {postComments.map((comment, commentIndex) => (
 
@@ -107,8 +109,10 @@ const Post = () => {
                           </DropdownMenu>
                         </div>
                       </Dropdown>
+                      
                     </CardBody>
                   </Card>
+                  
                 );
               })}
             </div>

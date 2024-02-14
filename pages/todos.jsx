@@ -9,7 +9,7 @@ import {
 } from "@nextui-org/react";
 import Link from 'next/link';
 
-const Todos = () => {
+const Todos = ({children}) => {
   const [isFollowed, setIsFollowed] = useState(false);
   const [todos, setTodos] = useState([]);
   const [users, setUsers] = useState([]);
@@ -44,15 +44,15 @@ const Todos = () => {
   }
 
   return (
-    <div className='bg-gray-100 min-h-screen'>
+    <div className='bg-gray-400 min-h-screen'>
       <div className='flex justify-between p-4'>
         <h2 className="font-bold">Todos</h2>
       </div>
-      <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
-        <div className='bg-gray-100 min-h-screen flex justify-center'>
+      <div className='w-full m-auto p-4 border rounded-lg bg-black-400 overflow-y-auto'>
+        <div className='bg-gray-400 min-h-screen flex justify-center'>
 
           <div className='p-4'>
-            <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
+            <div className='w-full m-auto p-4 border rounded-lg bg-gray-400 overflow-y-auto'>
               {users.map((user, index) => {
                 // Filter todos for the current user
                 const userTodos = todos.filter(todo => todo.userId === user.id);

@@ -19,14 +19,14 @@ const Customers = () => {
   }, []);
 
   return (
-    <div className='bg-gray-100 min-h-screen'>
-      <div className='flex justify-between p-4'>
-        <h2 className="font-bold">Users</h2>
+    <div className='bg-customColor min-h-screen'>
+      <div className='bg-customColor flex justify-between p-4'>
+        <h2 className="text-customTextColor font-bold">Users</h2>
       </div>
       <div className='p-5'>
-        <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
-          <div className='my-3 p-2 grid md:grid-cols-5 sm:grid-cols-4 grid-cols-3 items-center justify-between cursor-pointer'>
-            <span>Name</span>
+        <div className='bg-white w-full m-auto p-4 border rounded-lg overflow-y-auto'>
+          <div className='bg-white first-line:text-customTextColor Colormy-3 p-2 grid md:grid-cols-5 sm:grid-cols-4 grid-cols-3 items-center justify-between cursor-pointer'>
+            <span text-customTextColor>Name</span>
             <span className='sm:text-left text-right'>Email</span>
             <span className='hidden md:grid'>Address</span>
             <span className='hidden sm:grid'>City</span>
@@ -34,15 +34,15 @@ const Customers = () => {
           </div>
 
           {users.map((user, index) => (
-            <div key={index} className='bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2 grid md:grid-cols-5 sm:grid-cols-4 grid-cols-3 items-center justify-between cursor-pointer'>
+            <div key={index} className='bg-customDivColor hover:bg-gray-100 rounded-lg my-3 p-2 grid md:grid-cols-5 sm:grid-cols-4 grid-cols-3 items-center justify-between cursor-pointer'>
               <div className='flex items-center'>
-                <div className='bg-purple-100 p-3 rounded-lg'>
+                <div className=' bg-purple-100 p-3 rounded-lg'>
                   <BsPersonFill className='text-purple-800' />
                 </div>
                 <p className='pl-4'>{user.name}</p>
               </div>
               <p className='text-gray-600 sm:text-left text-right'>{user.email}</p>
-              <p className='hidden md:flex'>{user.address.street}</p>
+              <p className='text-customTextColor hidden md:flex'>{user.address.street}</p>
               <p className='hidden sm:flex'>{user.address.city}</p>
 
               <div>

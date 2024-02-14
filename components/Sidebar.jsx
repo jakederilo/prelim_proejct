@@ -10,8 +10,8 @@ import {Tooltip} from "@nextui-org/react";
 
 const Sidebar = ({ children }) => {
   return (
-    <div className='flex'>
-      <div className='fixed w-20 h-screen p-4 bg-white border-r-[1px] flex flex-col justify-between'>
+    <div className='bg-customDivColor flex'>
+      <div className='fixed w-20 h-screen p-4 bg-customBgColor border-r-[1px] flex flex-col justify-between'>
         <div className='flex flex-col items-center'>
   
           <Link href='/'>
