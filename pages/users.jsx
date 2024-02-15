@@ -46,7 +46,7 @@ const Customers = () => {
               <p className='text-customTextColor hidden md:flex'>{user.address.street}</p>
               <p className='hidden sm:flex'>{user.address.city}</p>
 
-              <div>
+              <div className=' bg-green-200 p-2 w-8 rounded-sm'>
                 <Link href={`/userstodos/todosuser${user.id}`}> {/* Link to user's todos page */}
                   <a><RiTodoLine /></a> {/* Wrap the icon with <a> tag */}
                 </Link>
